@@ -2,7 +2,7 @@ const router = require("express").Router();
 const validateSession = require("../middleware/validate-session");
 const Deck = require("../models/deck.model");
 
-//TODO Create an endpoint that create a new deck of cards
+//TODO Create an endpoint that creates a new deck of cards
 router.post("/", validateSession, async (req, res) => {
   try {
     const deck = new Deck({
