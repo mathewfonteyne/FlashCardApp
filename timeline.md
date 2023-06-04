@@ -12,8 +12,10 @@
 6-2
 
 6-3 
-    Matthew make initial postman connections
-    
+    Matthew make initial signup/login files and postman connections
+        validateSession
+        hashing passwords/email
+
 6-4
 
 6-5
