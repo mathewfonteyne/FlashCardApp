@@ -15,7 +15,9 @@
     Matthew make initial signup/login files and postman connections
         validateSession
         hashing passwords/email
-
+    Jeff research competition
+        Outline initial questions
+        download apps brainscape, flashcardmachine, Cram, knowt.io, and anki 
 6-4
 
 6-5
