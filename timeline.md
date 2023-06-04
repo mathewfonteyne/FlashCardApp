@@ -18,8 +18,13 @@
     Jeff research competition
         Outline initial questions
         download apps brainscape, flashcardmachine, Cram, knowt.io, and anki 
+    
 6-4
-
+    Initial meet with Justin Ahmann
+    Breakdown of MVP and stretch goals
+    MERN stack doc shared and filled out
+    meeting record shared, transcribed 
+    
 6-5
 
 6-6
