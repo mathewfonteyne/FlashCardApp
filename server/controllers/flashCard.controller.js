@@ -7,7 +7,7 @@ const User = require("../models/user.model");
 const validateSession = require("../middleware/validate-session");
 
 //TODO Display all flash cards within a deck
-router.get("allflashcards/:deck_id", validateSession, async (req, res) => {
+router.get("/allflashcards/:deck_id", validateSession, async (req, res) => {
   try {
     const findDeck = await Deck.findOne({ _id: req.params.deck_id });
     const getAllFlashCards = await FlashCard.find({ deck: req.params.deck_id });
@@ -25,6 +25,7 @@ router.get("allflashcards/:deck_id", validateSession, async (req, res) => {
 });
 
 //TODO Create a flashcard within a deck endpoint
+// http://localhost:4040/flashcard/create/:deck_id
 router.post("/create/:deck_id", validateSession, async (req, res) => {
   try {
     const findDeck = await Deck.findOne({ _id: req.params.deck_id });
