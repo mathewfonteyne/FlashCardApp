@@ -18,7 +18,7 @@ export default function Login({ updateToken }) {
     //         password: passwordRef.current.value,
     //     });
     //     // Pulled /login from user.controller.js
-    //     const url = "http://localhost:4004/user/login";
+    //     const url = "http://localhost:4040/user/login";
 
     //     try {
     //         const res = await fetch(url, {
@@ -43,8 +43,7 @@ export default function Login({ updateToken }) {
             password: passwordRef.current.value,
         })
 
-        const url = "http://localhost:4004/user/login";
-        //! temp url, will need to be revisited
+        const url = "http://localhost:4040/user/login";
 
         try {
             const res = await fetch(url, {
