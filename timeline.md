@@ -26,7 +26,8 @@
     meeting record shared, transcribed 
     
 6-5
-
+    Jeff build bones of login.jsx and auth.jsx
+    Rich build signup
 6-6
 
 6-7
