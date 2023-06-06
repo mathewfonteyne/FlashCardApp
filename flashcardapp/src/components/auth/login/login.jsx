@@ -75,20 +75,19 @@ export default function Login({ updateToken }) {
                     <Label for="exampleEmail">Email</Label>
                     <Input
                         innerRef={emailRef}
+                        id="email"
                         type="email"
+                        placeholder="exampleEmail"
                         autoComplete="off"
-                        id="exampleEmail"
-                        name="email"
                     />
                 </FormGroup>
                 <FormGroup>
                     <Label for="examplePassword">Password</Label>
                     <Input
                         innerRef={passwordRef}
-                        id="examplePassword"
-                        name="password"
-                        placeholder="Password"
+                        id="password"
                         type="password"
+                        placeholder="Password"
                         autoComplete="off"
                     />
                 </FormGroup>
