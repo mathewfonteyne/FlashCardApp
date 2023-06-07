@@ -1,4 +1,6 @@
 import Signup from "./signup/Signup";
+import Login from "./login/Login";
+import { useState } from 'react';
 import React from "react";
 import {
   Card,
@@ -8,6 +10,14 @@ import {
   CardText,
   Button,
 } from "reactstrap";
+
+// const [ button, setButton ] = useState('Signup');
+
+// const swapForm = () => {
+//     button === "Login" ?
+//         setButton("Signup") :
+//         setButton("Login")
+// }
 
 export default function Auth(props) {
   return (
@@ -34,3 +44,12 @@ export default function Auth(props) {
     </>
   );
 }
+
+// return (
+//     <>
+        
+//             <Button onClick={swapForm} color="dark">{button}</Button>
+        
+//         {displayForm()}
+//     </>
+// )
