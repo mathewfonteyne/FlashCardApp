@@ -3,8 +3,15 @@ import { FormGroup, Form, Row, Col, Label, Input, Button } from "reactstrap";
 // importing useRef
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  CardText,
+} from "reactstrap";
 
-export default function Signup({ updateToken }) {
+export default function Signup(updateToken) {
   // variables use for containing the useRef() method/functionality
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -58,63 +65,77 @@ export default function Signup({ updateToken }) {
 
   return (
     <>
-      <h2>Signup</h2>
-      <Form onSubmit={handleSubmit}>
-        <Row className="row-cols-lg-auto g-3 align-items-center">
-          <Col>
-            <Label className="visually-hidden" for="exampleEmail">
-              Firstname
-            </Label>
-            <Input
-              innerRef={firstNameRef}
-              autoComplete={"off"}
-              name="firstname"
-              placeholder="Your first name"
-              type="text"
-            />
-          </Col>
-          <Col>
-            <Label className="visually-hidden" for="exampleEmail">
-              Lastname
-            </Label>
-            <Input
-              innerRef={lastNameRef}
-              autoComplete={"off"}
-              name="lastname"
-              placeholder="Your last name"
-              type="text"
-            />
-          </Col>
-          <Col>
-            <Label className="visually-hidden" for="exampleEmail">
-              Email
-            </Label>
-            <Input
-              innerRef={emailRef}
-              autoComplete={"off"}
-              name="email"
-              placeholder="letslearn@email.com"
-              type="email"
-            />
-          </Col>
-          <Col>
-            <Label className="visually-hidden" for="examplePassword">
-              Password
-            </Label>
-            <Input
-              innerRef={passwordRef}
-              autoComplete={"off"}
-              name="password"
-              placeholder="secret"
-              type="password"
-            />
-          </Col>
-
-          <Col>
-            <Button type="submit">Submit</Button>
-          </Col>
-        </Row>
-      </Form>
+      <Card
+        style={{
+          width: "18rem",
+          margin: "center",
+        }}
+      >
+        <img alt="Sample" src="https://picsum.photos/300/200" />
+        <CardBody>
+        <Form onSubmit={handleSubmit}>
+                <FormGroup>
+                    <Label>First Name:</Label>
+                    <Input 
+                        innerRef={firstNameRef}
+                        autoComplete={"off"}
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Last Name:</Label>
+                    <Input
+                        innerRef={lastNameRef}
+                        autoComplete={"off"}
+                        />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Email:</Label>
+                    <Input
+                        innerRef={emailRef}
+                        type="email"
+                        autoComplete={"off"}
+                        />
+                </FormGroup>
+                <FormGroup>
+                    <Label>Password</Label>
+                    <Input
+                        innerRef={passwordRef}
+                        type="password"
+                        autoComplete={"off"}
+                        />
+                </FormGroup>
+                <Button>
+                    <Button type='submit'>Signup</Button>
+                </Button>
+            </Form>
+        </CardBody>
+      </Card>
     </>
   );
+
 }
+
+//! previously resided in auth.jsx, moved here and modified to class style. Sorry Rich. 
+  // return (
+  //   <>
+  //     <Card
+  //       style={{
+  //         width: "18rem",
+  //         margin: "center",
+  //       }}
+  //     >
+  //       <img alt="Sample" src="https://picsum.photos/300/200" />
+  //       <CardBody>
+  //         <CardTitle tag="h5"></CardTitle>
+  //         <CardSubtitle className="mb-2 text-muted" tag="h6">
+  //           <Signup updateToken={props.updateToken} />
+  //         </CardSubtitle>
+  //         <CardText>
+  //           Some quick example text to build on the card title and make up the
+  //           bulk of the card‘s content.
+  //         </CardText>
+  //         <Button>Button</Button>
+  //       </CardBody>
+  //     </Card>
+  //   </>
+  // );
