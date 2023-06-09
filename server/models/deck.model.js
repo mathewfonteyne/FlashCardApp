@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-    deck_id: {
-        // unique id for the deck
-        type: String,
-        required: true,
-    },
     deckName: {
         type: String,
         required: true,

@@ -13,7 +13,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    deck_id: { // which cards belong to which deck
+    deck: { // which cards belong to which deck
         type: String,
         required: true,
     },
