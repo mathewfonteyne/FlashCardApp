@@ -24,10 +24,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Auth updateToken={updateToken} />} />
-        <Route
-          path="/flashcards"
-          element={<Acquisition token={sessionToken} />}
-        />
+        <Route path="/decks" element={<Acquisition token={sessionToken} />} />
       </Routes>
     </div>
   );
