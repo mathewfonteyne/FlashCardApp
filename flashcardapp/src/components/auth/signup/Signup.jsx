@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
 
-export default function Signup(updateToken) {
+export default function Signup({updateToken}) {
   // variables use for containing the useRef() method/functionality
   const firstNameRef = useRef();
   const lastNameRef = useRef();
