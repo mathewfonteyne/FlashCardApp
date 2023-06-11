@@ -51,6 +51,8 @@ router.patch("/updatedeck/:deck_id", validateSession, async (req, res) => {
     const findDeck = await Deck.findOne({
       _id: req.params.deck_id,
     });
+    //TODO: Add validation to make sure the user is the owner of the deck
+
     if (!findDeck) throw new Error("Couldn't Find That Deck.");
     const filter = { _id: req.params.deck_id };
     const info = req.body;

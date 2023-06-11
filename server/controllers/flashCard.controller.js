@@ -74,6 +74,7 @@ router.post("/create/:deck_id", validateSession, async (req, res) => {
 });
 
 //TODO Create an endpoint to update/patch a flashcard
+// http://localhost:4040/flashcard/updateflashcard/:id
 router.patch("/updateflashcard/:id", validateSession, async (req, res) => {
   try {
     const getFlashCard = await FlashCard.findOne({
@@ -101,6 +102,30 @@ router.patch("/updateflashcard/:id", validateSession, async (req, res) => {
       message: "Successfully Updated!",
       update,
     });
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
+});
+
+//TODO Create an endpoint to delete a flashcard
+// http://localhost:4040/flashcard/deletecard/:id
+router.delete("/deletecard/:id", validateSession, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedFlashCard = await FlashCard.deleteOne({
+      _id: id,
+      owner_id: req.user._id,
+    });
+    deletedFlashCard.deletedCount
+      ? res.status(200).json({
+          message: "Successfully Deleted!",
+          deletedFlashCard,
+        })
+      : res.status(404).json({
+          message: "No Flashcard in your deck was found!",
+        });
   } catch (err) {
     res.status(500).json({
       error: err.message,
