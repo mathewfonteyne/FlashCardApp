@@ -1,30 +1,20 @@
 const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema({
-    front: {
-        type: String,
-        required: true,
-    },
-    rear: {
-        type: String,
-        required: true,
-    },
-    starred: { // used for saving or bookmarking cards for later review
-        type: String,
-        required: false,
-    },
-    deck: { // which cards belong to which deck
-        type: String,
-        required: true,
-    },
-    image: { // for media
-        type: String,
-        required: false,
-    },
-    owner_id: { // so only the creator will be allowed to delete
-        type: String,
-        required: true,
-    },
+const FlashCardSchema = new mongoose.Schema({
+  front: {
+    type: String,
+    required: true,
+  },
+  back: {
+    type: String,
+    required: true,
+  },
+  deck: {
+    type: String,
+  },
+  owner_id: {
+    type: String,
+  },
 });
 
-module.exports = mongoose.model("Card", UserSchema);
+module.exports = mongoose.model("FlashCard", FlashCardSchema);

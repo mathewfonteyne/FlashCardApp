@@ -1,14 +1,13 @@
 const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema({
-    deckName: {
-        type: String,
-        required: true,
-    },
-    numberOfCards: { // for showing on a main page how many cards are in this deck
-        type: String,
-        required: false,
-    },
+const DeckSchema = new mongoose.Schema({
+  category: {
+    type: String,
+    required: true,
+  },
+  owner_id: {
+    type: String,
+  },
 });
 
-module.exports = mongoose.model("Deck", UserSchema);
+module.exports = mongoose.model("Deck", DeckSchema);
