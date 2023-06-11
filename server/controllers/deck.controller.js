@@ -77,16 +77,21 @@ router.patch("/updatedeck/:deck_id", validateSession, async (req, res) => {
 // http://localhost:4040/deck/deletedeck/:deck_id
 router.delete("/deletedeck/:deck_id", validateSession, async (req, res) => {
   try {
-    const findDeck = await Deck.findOne({ _id: req.params.deck_id });
-    if (!findDeck) throw new Error("Couldn't Find That Deck.");
+    // const findDeck = await Deck.findOne({ _id: req.params.deck_id });
+    // if (!findDeck) throw new Error("Couldn't Find That Deck.");
     const { deck_id } = req.params;
     const deleteDeck = await Deck.deleteOne({
       _id: deck_id,
+      owner_id: req.user._id,
     });
     if (deleteDeck.deletedCount) {
       res.status(200).json({
         message: "Deck Successfully Deleted",
         deleteDeck,
+      });
+    } else {
+      res.status(404).json({
+        message: "No deck of yours was found",
       });
     }
   } catch (err) {
