@@ -29,13 +29,14 @@ router.post("/", validateSession, async (req, res) => {
   try {
     const deck = new Deck({
       category: req.body.category,
+      owner_id: req.user._id,
     });
 
     const newDeck = await deck.save();
 
     res.status(200).json({
-      deck: newDeck,
       message: "You have successfully created a new Flashcard Deck!",
+      deck: newDeck,
     });
   } catch (err) {
     res.status(500).json({
@@ -51,9 +52,12 @@ router.patch("/updatedeck/:deck_id", validateSession, async (req, res) => {
     const findDeck = await Deck.findOne({
       _id: req.params.deck_id,
     });
-    //TODO: Add validation to make sure the user is the owner of the deck
 
     if (!findDeck) throw new Error("Couldn't Find That Deck.");
+
+    //TODO: Add validation to make sure the user is the owner of the deck
+    if (req.user._id != findDeck.owner_id)
+      throw new Error("You Cannot Edit This Deck!");
     const filter = { _id: req.params.deck_id };
     const info = req.body;
     const returnOption = { new: true };
