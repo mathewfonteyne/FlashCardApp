@@ -57,8 +57,8 @@ export default function Login({ updateToken }) {
 
       if (data.message === "Login Successful!") {
         updateToken(data.token); // message matches user.controller.js
-        navigate("/flashcards");
-        alert(data.message);
+        navigate("/decks");
+        // alert(data.message);
       }
     } catch (err) {
       console.log(err);

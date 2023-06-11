@@ -10,7 +10,7 @@ export default function Acquisition(props) {
   const [decks, setDecks] = useState([]);
 
   const fetchDecks = async () => {
-    const url = "http://localhost:4040/flashcards/";
+    const url = "http://localhost:4040/deck/";
     const requestOptions = {
       method: "GET",
       headers: new Headers({
@@ -21,6 +21,7 @@ export default function Acquisition(props) {
       const res = await fetch(url, requestOptions);
       const data = await res.json();
       setDecks(data.getAllDecks);
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
