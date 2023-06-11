@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   // Use useState to house token
-  const [sessionToken, setSessionToken] = useState("");
+  const [sessionToken, setSessionToken] = useState('');
 
   const updateToken = (newToken) => {
     localStorage.setItem("token", newToken);
