@@ -3,6 +3,7 @@ import React from "react";
 import Decks from "./Decks";
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function Acquisition(props) {
   // State to house movie data
