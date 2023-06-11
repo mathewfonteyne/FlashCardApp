@@ -12,6 +12,9 @@ const FlashCardSchema = new mongoose.Schema({
   deck: {
     type: String,
   },
+  owner_id: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("FlashCard", FlashCardSchema);
