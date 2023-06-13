@@ -5,6 +5,8 @@ const PORT = process.env.PORT;
 
 // --------- Controllers -------------
 const users = require("./controllers/user.controller");
+const decks = require("./controllers/deck.controller");
+const flashCards = require("./controllers/flashCard.controller");
 
 // Adding in cors dependency
 const cors = require("cors");
@@ -20,6 +22,8 @@ db.once("open", () => console.log(`Connected: ${MONGO}`));
 
 // ---------------- Routes to Controllers --------------- //
 app.use("/user", users);
+app.use("/deck", decks);
+app.use("/flashcard", flashCards);
 
 // Testing to see if PORT is connected. // WORKS!
 app.listen(PORT, () => console.log(`Server is running on Port: ${PORT}.`));
