@@ -2,7 +2,7 @@ import "./App.css";
 import Acquisition from "./components/acquisition/Acquisition";
 import Auth from "./components/auth/Auth";
 import { Routes, Route } from "react-router-dom";
-
+import CreateDeck from "./components/acquisition/CreateDeck";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Auth updateToken={updateToken} />} />
         <Route path="/decks" element={<Acquisition token={sessionToken} />} />
+        <Route path="/decks/create" element={<CreateDeck token={sessionToken} />} />
       </Routes>
     </div>
   );
