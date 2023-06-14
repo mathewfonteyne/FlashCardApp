@@ -3,6 +3,7 @@ import Acquisition from "./components/acquisition/Acquisition";
 import FlashcardsInDeck from "./components/flashcards/FlashcardsInDeck";
 import Auth from "./components/auth/Auth";
 import { Routes, Route } from "react-router-dom";
+import Logout from "./components/auth/logout/Logout";
 
 import { useEffect, useState } from "react";
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+      {sessionToken !== "" ? <Logout setToken={setSessionToken} /> : null}
       <Routes>
         <Route path="/" element={<Auth updateToken={updateToken} />} />
         <Route path="/decks" element={<Acquisition token={sessionToken} />} />
