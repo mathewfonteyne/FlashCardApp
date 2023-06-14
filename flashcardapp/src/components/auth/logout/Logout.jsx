@@ -19,7 +19,9 @@ export default function Logout({ setToken }) {
 
   return (
     <>
-      <h2>Logout</h2>;
+      <Button style={style} onClick={signout} color="danger" outline>
+        Signout
+      </Button>
     </>
   );
 }

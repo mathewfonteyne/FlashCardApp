@@ -1,8 +1,8 @@
 import React from "react";
 // decks begin use as a test
-import DeckCreation from "./DeckCreation.jsx";
+//import Decks from "./Decks";
 import { useState, useEffect } from "react";
-//import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 //import { useNavigate } from "react-router-dom";
 
 // React Carousel
@@ -102,7 +102,7 @@ export default function Acquisition(props) {
 
   return (
     <>
-      <style>
+      {/* <style>
         {`.custom-tag {
               max-width: 100%;
               height: 500px;
@@ -126,7 +126,20 @@ export default function Acquisition(props) {
           directionText="Next"
           onClickHandler={next}
         />
-      </Carousel>
+      </Carousel> */}
+      <Container>
+        <Row>
+          <DeckCreate />
+        </Row>
+        <Row>
+          {/* <Col md="10"> */}
+          <Decks decks={decks} token={props.token} fetchDecks={fetchDecks} />
+          {/* </Col> */}
+          {/* <Col md="2"> */}
+          {/* <DeckCreate /> */}
+          {/* </Col> */}
+        </Row>
+      </Container>
     </>
   );
 }
