@@ -7,7 +7,7 @@ export default function Logout({ setToken }) {
 
   // Build a sign out function
   const signout = () => {
-    locatStorage.removeItem("token");
+    localStorage.removeItem("token");
     setToken("");
     navigate("/");
   };
