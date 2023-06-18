@@ -24,7 +24,7 @@ export default function Signup({updateToken}) {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     
-    // This is where password checks live
+    // This is where password checks would live
 
     let body = JSON.stringify({
       firstName,
