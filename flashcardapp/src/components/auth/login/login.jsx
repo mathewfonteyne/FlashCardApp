@@ -86,7 +86,7 @@ export default function Login({ updateToken }) {
             innerRef={passwordRef}
             id="password"
             type="password"
-            placeholder="Password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             autoComplete="off"
           />
         </FormGroup>
