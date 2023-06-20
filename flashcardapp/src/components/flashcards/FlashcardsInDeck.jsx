@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Card } from "reactstrap";
 
 export default function FlashcardsInDeck(props) {
   const { id } = useParams();
@@ -19,8 +20,9 @@ export default function FlashcardsInDeck(props) {
     try {
       const response = await fetch(url, reqOptions);
       const data = await response.json();
-      console.log(data.getAllFlashCards);
+      // console.log(data.getAllFlashCards);
       setFlashcards(data.getAllFlashCards);
+      console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -30,6 +32,13 @@ export default function FlashcardsInDeck(props) {
     if (props.token) {
       fetchFlashcards();
     }
-  });
-  return <></>;
+  }, [props.token]);
+  return (
+    <>
+      <Card>
+        {/* <h1>{flashcards[7].back}</h1> */}
+        test
+      </Card>
+    </>
+  );
 }
