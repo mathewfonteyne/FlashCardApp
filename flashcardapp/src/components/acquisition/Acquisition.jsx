@@ -6,7 +6,8 @@ import DeckCreate from "./DeckCreate";
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 //import { useNavigate } from "react-router-dom";
-
+import CreateDeck from "./CreateDeck";
+import CreateCard from "./CreateCard";
 // React Carousel
 import {
   Carousel,

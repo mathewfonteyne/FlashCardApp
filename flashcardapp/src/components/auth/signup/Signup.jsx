@@ -1,7 +1,7 @@
 //importing the tags use by reactstrap
 import { FormGroup, Form, Row, Col, Label, Input, Button } from "reactstrap";
 // importing useRef
-import { useRef } from "react";
+import { useRef, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
 
@@ -23,6 +23,8 @@ export default function Signup({updateToken}) {
     const lastName = lastNameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    
+    // This is where password checks would live
 
     let body = JSON.stringify({
       firstName,
@@ -85,6 +87,9 @@ export default function Signup({updateToken}) {
               <Input
                 innerRef={passwordRef}
                 type="password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title=">8 characters, one upper, and number"
+                placeholder="Greater than 8 characters, at least one number, uppercase, lowercase, and symbol "
                 autoComplete={"off"}
               />
             </FormGroup>
@@ -97,28 +102,3 @@ export default function Signup({updateToken}) {
     </>
   );
 }
-
-//! previously resided in auth.jsx, moved here and modified to class style. Sorry Rich.
-// return (
-//   <>
-//     <Card
-//       style={{
-//         width: "18rem",
-//         margin: "center",
-//       }}
-//     >
-//       <img alt="Sample" src="https://picsum.photos/300/200" />
-//       <CardBody>
-//         <CardTitle tag="h5"></CardTitle>
-//         <CardSubtitle className="mb-2 text-muted" tag="h6">
-//           <Signup updateToken={props.updateToken} />
-//         </CardSubtitle>
-//         <CardText>
-//           Some quick example text to build on the card title and make up the
-//           bulk of the card‘s content.
-//         </CardText>
-//         <Button>Button</Button>
-//       </CardBody>
-//     </Card>
-//   </>
-// );
