@@ -90,7 +90,7 @@ export default function Acquisition(props) {
       const res = await fetch(url, requestOptions);
       const data = await res.json();
       setDecks(data.getAllDecks);
-      console.log(data);
+      // console.log(data);
     } catch (err) {
       console.log(err);
     }
