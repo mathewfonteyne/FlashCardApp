@@ -1,14 +1,13 @@
-import React from "react";
-import { Table, Button } from "reactstrap";
+import React from 'react';
 import { useNavigate } from 'react-router-dom'
 
-export default function DeckTable(props) {
+export default function DeckDelete(props) {
     
     const navigate = useNavigate();
 
     async function deleteDeck(id) {
-
-        const url = ''
+        
+        const url = `http://localhost:4040/deletedeck/${deck_id}`
 
         const myHeaders = new Headers();
         myHeaders.append("Authorization", props.token);
@@ -30,10 +29,13 @@ export default function DeckTable(props) {
     } 
 }
 
+//! this will live in deck page
+//! Include popup
 return (
     <>
         <Button
             onClick={() => deleteDeck(deck._id)}
+            // onclick navigate back to /decks 
             color="danger">Delete</Button>
     </>
 )
