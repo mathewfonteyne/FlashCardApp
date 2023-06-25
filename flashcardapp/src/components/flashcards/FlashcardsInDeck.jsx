@@ -9,6 +9,7 @@ export default function FlashcardsInDeck(props) {
   const fronts = flashcards.map((card) => card.front);
   const backs = flashcards.map((card) => card.back);
   const [cardIndex, setCardIndex] = useState(0);
+  const [showFront, setShowFront] = useState(true);
   const url = `http://localhost:4040/flashcard/allflashcards/${id}`;
   const navigate = useNavigate();
 
@@ -49,11 +50,16 @@ export default function FlashcardsInDeck(props) {
     }
   };
 
-  // const flipCard = () => {
-  //   let tempFront = fronts[cardIndex]
-  //   let tempBack = backs[cardIndex]
-  //   if
-  // };
+  const flipCard = () => {
+    //let tempFront = fronts[cardIndex];
+    //let tempBack = backs[cardIndex];
+    //if (tempFront === true) {
+    //return tempBack;
+    //} else {
+    //return tempFront;
+    //}
+    setShowFront((current) => !current);
+  };
 
   useEffect(() => {
     if (props.token) {
@@ -74,13 +80,13 @@ export default function FlashcardsInDeck(props) {
           backgroundColor: "light blue",
         }}
       >
-        {backs[cardIndex]}
+        {showFront ? fronts[cardIndex] : backs[cardIndex]}
         <Row>
           <Col>
             <Button onClick={prevCard}>back</Button>
           </Col>
           <Col>
-            <Button>Flip Card</Button>
+            <Button onClick={flipCard}>Flip Card</Button>
           </Col>
           <Col>
             <Button onClick={nextCard}>next</Button>
