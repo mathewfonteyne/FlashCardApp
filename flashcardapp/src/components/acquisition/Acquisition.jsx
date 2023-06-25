@@ -131,9 +131,7 @@ export default function Acquisition(props) {
         />
       </Carousel> */}
       <Container>
-        <Row>
-          <DeckCreate />
-        </Row>
+        <Row>{/* <DeckCreate /> */}</Row>
         <Row>
           {/* <Col md="10"> */}
           <Decks decks={decks} token={props.token} fetchDecks={fetchDecks} />
