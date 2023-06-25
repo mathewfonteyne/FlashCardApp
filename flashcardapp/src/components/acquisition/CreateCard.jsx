@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
-export default function CreateDeck(props) {
+export default function CreateCard(props) {
     // Use useRef to get values from inputs!
     const frontRef = useRef(); // map to deck name
     const backRef = useRef();
