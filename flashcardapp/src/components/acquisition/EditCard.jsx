@@ -9,7 +9,7 @@ export default function EditCard(props) {
 
     const navigate = useNavigate();
 
-    const url = `http://localhost:4040/deck/create/${deck_id}`;
+    const url = `http://localhost:4040/flashcard/updateflashcard/${id}`;
 
     const fetchDeck = async () => {
         const requestOption = {
@@ -25,7 +25,7 @@ export default function EditCard(props) {
 
             setCardFront(front);
             setCardBack(back);
-            setDeckName(deck);
+            //setDeckName(deck);
 
         } catch (error) {
             console.error(error);
@@ -42,7 +42,7 @@ export default function EditCard(props) {
         e.preventDefault();
 
         let bodyOjb = JSON.stringify({
-            deck: deckName,
+            //deck: deckName,
             front: cardFront,
             back: cardBack,
         });

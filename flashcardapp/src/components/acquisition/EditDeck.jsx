@@ -7,7 +7,7 @@ export default function EditDeck(props) {
 
     const navigate = useNavigate();
 
-    const url = `http://localhost:4040/deck/${deck_id}`;
+    const url = `http://localhost:4040/deck/updatedeck/${deck_id}`;
 
     const fetchDeck = async () => {
         const requestOption = {
