@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function DeckDelete(props) {
-    
+    const { deck_id } = useParams();
     const navigate = useNavigate();
 
     async function deleteDeck(id) {
@@ -24,18 +24,10 @@ export default function DeckDelete(props) {
                 props.fetchDecks();
             }
         } catch(err) {
-            console.error(error);
+            console.error(err);
         }
     } 
 }
 
 //! this will live in deck page
 //! Include popup
-return (
-    <>
-        <Button
-            onClick={() => deleteDeck(deck._id)}
-            // onclick navigate back to /decks 
-            color="danger">Delete</Button>
-    </>
-)

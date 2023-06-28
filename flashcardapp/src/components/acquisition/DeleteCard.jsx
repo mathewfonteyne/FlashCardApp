@@ -25,17 +25,17 @@ export default function CardDelete(props) {
                 props.fetchCard();
             }
         } catch(err) {
-            console.error(error);
+            console.error(err);
         }
     } 
 }
 
 //! this will live in deck page
 //! Include popup
-return (
-    <>
-        <Button
-            onClick={() => deleteCard(card._id)}
-            color="danger">Delete</Button>
-    </>
-)
+// return (
+//     <>
+//         <Button
+//             onClick={() => deleteCard(card._id)}
+//             color="danger">Delete</Button>
+//     </>
+// )
