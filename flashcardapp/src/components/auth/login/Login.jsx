@@ -1,6 +1,16 @@
 import { useRef } from "react";
-import { Form, FormGroup, Input, Label, Button } from "reactstrap";
+// Removed the react-strap button
+import { Container, Form, FormGroup, Input, Label } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+// This was done for M-ui
+import * as React from "react";
+import Button from "@mui/material/Button";
+import { TextField, Typography } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Grid from "@mui/material/Grid";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
 
 export default function Login({ updateToken }) {
   // Refs
@@ -67,31 +77,87 @@ export default function Login({ updateToken }) {
 
   // Standard import from Unit7, day50
   return (
-    <>
-      <h1> Login </h1>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input
-            innerRef={emailRef}
-            id="email"
-            type="email"
-            placeholder="exampleEmail"
-            autoComplete="off"
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input
-            innerRef={passwordRef}
-            id="password"
-            type="password"
-            placeholder="Password"
-            autoComplete="off"
-          />
-        </FormGroup>
-        <Button type="submit">Login</Button>
-      </Form>
-    </>
+    <Container>
+      {/* {picture that loads on the side} */}
+      <Grid container component="main" sx={{ height: "100vh" }}>
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage:
+              "url(https://source.unsplash.com/random?wallpapers)",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: (t) =>
+              t.palette.mode === "light"
+                ? t.palette.grey[50]
+                : t.palette.grey[900],
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              {" "}
+              Login{" "}
+            </Typography>
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+              <FormGroup>
+                {/* {<Label for="exampleEmail">Email</Label>} */}
+                <TextField
+                  innerRef={emailRef}
+                  label="Email Address"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="email"
+                  id="email"
+                  type="email"
+                  placeholder="exampleEmail"
+                  autoComplete="off"
+                />
+              </FormGroup>
+              <FormGroup>
+                {/* <{Label for="examplePassword">Password</Label}> */}
+                <TextField
+                  innerRef={passwordRef}
+                  label="Password"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                  autoComplete="off"
+                />
+              </FormGroup>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Login
+              </Button>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }

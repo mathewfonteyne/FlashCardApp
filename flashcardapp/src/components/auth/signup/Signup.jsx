@@ -2,7 +2,7 @@
 import { FormGroup, Form, Row, Col, Label, Input, Button } from "reactstrap";
 // importing useRef
 
-import { useRef, useState} from "react";
+import { useRef, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { Card, CardBody, CardTitle, CardSubtitle, CardText } from "reactstrap";
@@ -25,7 +25,7 @@ export default function Signup({ updateToken }) {
     const lastName = lastNameRef.current.value;
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    
+
     // This is where password checks would live
 
     // This is where password checks would live
@@ -106,4 +106,3 @@ export default function Signup({ updateToken }) {
     </>
   );
 }
-
