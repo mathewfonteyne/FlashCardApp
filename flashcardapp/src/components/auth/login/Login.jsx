@@ -2,6 +2,9 @@ import { useRef } from "react";
 // Removed the react-strap button
 import { Container, Form, FormGroup, Input, Label } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+/* 
+npm install @mui/material @emotion/react @emotion/styled
+*/
 // This was done for M-ui
 import * as React from "react";
 import Button from "@mui/material/Button";
@@ -77,9 +80,14 @@ export default function Login({ updateToken }) {
 
   // Standard import from Unit7, day50
   return (
-    <Container>
+    <Container component="main">
       {/* {picture that loads on the side} */}
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid
+        container
+        spacing={2}
+        component="main"
+        sx={{ height: "80vh", mt: 3 }}
+      >
         <Grid
           item
           xs={false}
