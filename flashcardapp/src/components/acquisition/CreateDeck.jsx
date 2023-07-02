@@ -41,7 +41,7 @@ export default function CreateDeck(props) {
             const data = await res.json();
 
             // Call the CreateDeck function via props to refresh our table after movie is added
-            props.FetchDecks();
+            // props.fetchDecks();
         } catch (err) {
             console.error(err);
         }

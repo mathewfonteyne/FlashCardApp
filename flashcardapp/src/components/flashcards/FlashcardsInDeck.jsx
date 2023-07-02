@@ -2,12 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, Button, Col, Row } from "reactstrap";
+import DeleteCard from "../acquisition/DeleteCard"
 
 export default function FlashcardsInDeck(props) {
   const { id } = useParams();
   const [flashcards, setFlashcards] = useState([]);
   const fronts = flashcards.map((card) => card.front);
   const backs = flashcards.map((card) => card.back);
+  const cardId = flashcards.map((card) => card._id);
   const [cardIndex, setCardIndex] = useState(0);
   const [showFront, setShowFront] = useState(true);
   const url = `http://localhost:4040/flashcard/allflashcards/${id}`;
@@ -27,7 +29,7 @@ export default function FlashcardsInDeck(props) {
       if (data.getAllFlashCards.length < 1) {
         alert("No flash cards in this deck yet");
       }
-      // console.log(data);
+      console.log(data);
       setFlashcards(data.getAllFlashCards);
     } catch (err) {
       console.log(err);
@@ -66,8 +68,12 @@ export default function FlashcardsInDeck(props) {
       fetchFlashcards();
     }
   }, [props.token]);
-  // console.log(cardIndex);
-  // console.log(flashcards);
+
+  let currentCard = cardId[cardIndex];
+  // console.log("FOR CONOR", currentCard);
+
+
+
   return (
     <>
       {/* {flashcards.map((flashcards, index) => (
@@ -90,6 +96,12 @@ export default function FlashcardsInDeck(props) {
           </Col>
           <Col>
             <Button onClick={nextCard}>next</Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <DeleteCard flashcards={flashcards}/>
+            
           </Col>
         </Row>
       </Card>

@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "reactstrap";
 // decks begin use as a test
 //import Decks from "./Decks";
 import Decks from "./Decks";
@@ -111,10 +110,8 @@ export default function Acquisition(props) {
       <Container>
         <Row>
           <Decks decks={decks} token={props.token} fetchDecks={fetchDecks} />
+          
         </Row>
-        <Button>
-          <CreateDeck token={props.token} CreateDeck={CreateCard} />
-        </Button>
       </Container>
       
     </>

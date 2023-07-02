@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Auth updateToken={updateToken} />} />
         <Route path="/decks" element={<Acquisition token={sessionToken} />} />
-        <Route path="/decks/create" element={<CreateDeck token={sessionToken} />} />
+        {/* <Route path="/decks/create" element={<CreateDeck token={sessionToken} />} /> */}
         <Route path="/cards/create" element={<CreateCard token={sessionToken} />} />
         <Route path="/deck/deletedeck" element={<DeckDelete token={sessionToken} />} />
         <Route path="/flashcard/deletecard" element={<CardDelete token={sessionToken} />} />
