@@ -6,7 +6,8 @@ import DeckCreate from "./DeckCreate";
 import { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 //import { useNavigate } from "react-router-dom";
-
+import CreateDeck from "./CreateDeck";
+import CreateCard from "./CreateCard";
 // React Carousel
 import {
   Carousel,
@@ -89,7 +90,7 @@ export default function Acquisition(props) {
       const res = await fetch(url, requestOptions);
       const data = await res.json();
       setDecks(data.getAllDecks);
-      console.log(data);
+      // console.log(data);
     } catch (err) {
       console.log(err);
     }
@@ -130,9 +131,7 @@ export default function Acquisition(props) {
         />
       </Carousel> */}
       <Container>
-        <Row>
-          <DeckCreate />
-        </Row>
+        <Row>{/* <DeckCreate /> */}</Row>
         <Row>
           {/* <Col md="10"> */}
           <Decks decks={decks} token={props.token} fetchDecks={fetchDecks} />
