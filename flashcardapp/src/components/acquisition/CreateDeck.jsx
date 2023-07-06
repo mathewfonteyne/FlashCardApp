@@ -14,7 +14,7 @@ export default function CreateDeck(props) {
         const category = categoryRef.current.value;
 
         // our URL, subject to change
-        const url = "http://localhost:4040/decks/create";
+        const url = "http://localhost:4040/decks/";
 
         // Construct the body object & JSON stringify it
         let bodyObj = JSON.stringify({
@@ -41,7 +41,7 @@ export default function CreateDeck(props) {
             const data = await res.json();
 
             // Call the CreateDeck function via props to refresh our table after movie is added
-            props.FetchDecks();
+            // props.fetchDecks();
         } catch (err) {
             console.error(err);
         }

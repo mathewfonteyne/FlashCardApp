@@ -8,6 +8,8 @@ import { Col, Container, Row } from "reactstrap";
 //import { useNavigate } from "react-router-dom";
 import CreateDeck from "./CreateDeck";
 import CreateCard from "./CreateCard";
+import DeckDelete from "./DeleteDeck";
+import CardDelete from "./DeleteCard";
 // React Carousel
 import {
   Carousel,
@@ -105,42 +107,13 @@ export default function Acquisition(props) {
 
   return (
     <>
-      {/* <style>
-        {`.custom-tag {
-              max-width: 100%;
-              height: 500px;
-              background: black;
-            }`}
-      </style>
-      <Carousel activeIndex={activeIndex} next={next} previous={previous}>
-        <CarouselIndicators
-          items={items}
-          activeIndex={activeIndex}
-          onClickHandler={goToIndex}
-        />
-        {slides}
-        <CarouselControl
-          direction="prev"
-          directionText="Previous"
-          onClickHandler={previous}
-        />
-        <CarouselControl
-          direction="next"
-          directionText="Next"
-          onClickHandler={next}
-        />
-      </Carousel> */}
       <Container>
-        <Row>{/* <DeckCreate /> */}</Row>
         <Row>
-          {/* <Col md="10"> */}
           <Decks decks={decks} token={props.token} fetchDecks={fetchDecks} />
-          {/* </Col> */}
-          {/* <Col md="2"> */}
-          {/* <DeckCreate /> */}
-          {/* </Col> */}
+          
         </Row>
       </Container>
+      
     </>
   );
 }

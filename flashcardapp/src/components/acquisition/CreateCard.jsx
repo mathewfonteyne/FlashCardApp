@@ -1,11 +1,10 @@
 import React, { useRef } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
-export default function CreateDeck(props) {
+export default function CreateCard(props) {
     // Use useRef to get values from inputs!
     const frontRef = useRef(); // map to deck name
     const backRef = useRef();
-    const deckRef = useRef();
 
     // Build our handleSubmit function
     const handleSubmit = async (e) => {
@@ -14,16 +13,14 @@ export default function CreateDeck(props) {
         // Create vars for our input values
         const front = frontRef.current.value;
         const back = backRef.current.value;
-        const deck = deckRef.current.value;
 
         // our URL, subject to change
-        const url = "http://localhost:4040/cards/create";
+        const url = `http://localhost:4040/flashcard/create/${deck_id}`;
 
         // Construct the body object & JSON stringify it
         let bodyObj = JSON.stringify({
             front,
             back,
-            deck
         });
 
         // Headers

@@ -56,7 +56,7 @@ router.post("/create/:deck_id", validateSession, async (req, res) => {
         const flashCard = new FlashCard({
             front: req.body.front,
             back: req.body.back,
-            deck: deckName, // req.params.deck_id,
+            deck: req.params.deck_id,
             owner_id: req.user._id,
         });
         // console.log(deckName);
