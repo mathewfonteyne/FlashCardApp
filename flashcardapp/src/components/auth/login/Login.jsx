@@ -1,6 +1,6 @@
 import { useRef } from "react";
 // Removed the react-strap button
-import { Container, Form, FormGroup, Input, Label } from "reactstrap";
+import { Form, FormGroup, Input, Label } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 /* 
 npm install @mui/material @emotion/react @emotion/styled
@@ -14,6 +14,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 
 export default function Login({ updateToken }) {
   // Refs
@@ -80,14 +81,9 @@ export default function Login({ updateToken }) {
 
   // Standard import from Unit7, day50
   return (
-    <Container component="main">
+    <Container sx={{ bgcolor: "tomato", height: "100v" }} component="main">
       {/* {picture that loads on the side} */}
-      <Grid
-        container
-        spacing={2}
-        component="main"
-        sx={{ height: "80vh", mt: 3 }}
-      >
+      <Grid container spacing={2} sx={{ height: "80vh", mt: 3 }}>
         <Grid
           item
           xs={false}
@@ -109,8 +105,8 @@ export default function Login({ updateToken }) {
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
-              my: 8,
-              mx: 4,
+              my: 11,
+              mx: -1,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -120,8 +116,7 @@ export default function Login({ updateToken }) {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              {" "}
-              Login{" "}
+              Login
             </Typography>
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <FormGroup>
@@ -158,7 +153,7 @@ export default function Login({ updateToken }) {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{ mt: 3, mb: 2, ":hover": { bgcolor: "darkblue" } }}
               >
                 Login
               </Button>
