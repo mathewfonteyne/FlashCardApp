@@ -38,8 +38,6 @@ export default function Signup({ updateToken }) {
 
     // This is where password checks would live
 
-    // This is where password checks would live
-
     let body = JSON.stringify({
       firstName,
       lastName,
@@ -64,7 +62,7 @@ export default function Signup({ updateToken }) {
       const data = await response.json();
       if (data.message === "Success! User Created!") {
         updateToken(data.token);
-        navigate("/flashcards");
+        navigate("/decks");
       } else {
         alert(data.message);
       }
