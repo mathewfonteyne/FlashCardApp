@@ -7,14 +7,8 @@ npm install @mui/material @emotion/react @emotion/styled
 */
 // This was done for M-ui
 import * as React from "react";
-import Button from "@mui/material/Button";
-import { TextField, Typography } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import Grid from "@mui/material/Grid";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import { Container, Grid, Paper, Box, Avatar, LockOutlinedIcon, Typography, TextField, Button } from "@mui/material";
+
 
 export default function Login({ updateToken }) {
   // Refs
@@ -22,34 +16,7 @@ export default function Login({ updateToken }) {
   const passwordRef = useRef();
   const navigate = useNavigate();
 
-  //! Style 1
-  // const handleSubmit = async (e) => {
-  //     e.preventDefault();
-
-  //     // Request body
-  //     let body = JSON.stringify({
-  //         email: emailRef.current.value,
-  //         password: passwordRef.current.value,
-  //     });
-  //     // Pulled /login from user.controller.js
-  //     const url = "http://localhost:4040/user/login";
-
-  //     try {
-  //         const res = await fetch(url, {
-  //             method: "POST",
-  //             headers: new Headers({
-  //                 "Content-Type": "application/json",
-  //             }),
-  //             body: body, // key and value
-  //         });
-  //         const data = await res.json();
-  //         console.log(data);
-  //     } catch (err) {
-  //         console.log(err);
-  //     }
-  // };
-
-  //! Style 2
+  
   async function handleSubmit(e) {
     e.preventDefault();
     let body = JSON.stringify({
@@ -113,7 +80,7 @@ export default function Login({ updateToken }) {
             }}
           >
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
+
             </Avatar>
             <Typography component="h1" variant="h5">
               Login
@@ -122,7 +89,7 @@ export default function Login({ updateToken }) {
               <FormGroup>
                 {/* {<Label for="exampleEmail">Email</Label>} */}
                 <TextField
-                  innerRef={emailRef}
+                  inputRef={emailRef}
                   label="Email Address"
                   margin="normal"
                   required
@@ -137,7 +104,7 @@ export default function Login({ updateToken }) {
               <FormGroup>
                 {/* <{Label for="examplePassword">Password</Label}> */}
                 <TextField
-                  innerRef={passwordRef}
+                  inputRef={passwordRef}
                   label="Password"
                   margin="normal"
                   required
