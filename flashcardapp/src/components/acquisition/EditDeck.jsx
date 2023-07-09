@@ -10,8 +10,7 @@ export default function EditDeck(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         let bodyObj = JSON.stringify({
-            front: front,
-            back: back,
+            category: category
         });
         const reqOptions = {
             headers: new Headers({
@@ -24,7 +23,7 @@ export default function EditDeck(props) {
         try {
             const res = await fetch(url, reqOptions);
             const data = await res.json();
-            if (data.message === "Successfully Updated!") {
+            if (data.message === "Deck was successfully updated!") {
                 alert(`${data.message}`);
             }
             navigate(-1);
