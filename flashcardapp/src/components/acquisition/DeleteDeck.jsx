@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Col, Row } from "reactstrap";
@@ -33,6 +34,7 @@ export default function DeckDelete(props) {
     const deleteDeck = async () => {
         const url = `http://localhost:4040/deletedeck/${deck_id}`;
 
+
         const myHeaders = new Headers();
         myHeaders.append("Authorization", props.token);
 
@@ -44,6 +46,7 @@ export default function DeckDelete(props) {
         try {
             let response = await fetch(url, requestOptions);
             let data = await response.json();
+
             if (data) {
                 fetchDecks();
             }
@@ -92,9 +95,5 @@ export default function DeckDelete(props) {
                 </Row>
         </>
     );
-
-};
-
-
 
 

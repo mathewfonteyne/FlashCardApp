@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function EditDeck(props) {
     const { deck_id } = useParams();
     const [deckCategory, setDeckCategory] = useState("");
+
     const navigate = useNavigate();
     const url = `http://localhost:4040/deck/updatedeck/${deck_id}`;
 
@@ -13,6 +14,7 @@ export default function EditDeck(props) {
             category: category
         });
         const reqOptions = {
+
             headers: new Headers({
                 Authorization: props.token,
                 "Content-Type": "application/json",
@@ -21,6 +23,7 @@ export default function EditDeck(props) {
             method: "PATCH",
         };
         try {
+
             const res = await fetch(url, reqOptions);
             const data = await res.json();
             if (data.message === "Deck was successfully updated!") {
@@ -28,11 +31,11 @@ export default function EditDeck(props) {
             }
             navigate(-1);
 
+
         } catch (error) {
             console.error(error);
         }
     }
-
 
     return (
         <>
