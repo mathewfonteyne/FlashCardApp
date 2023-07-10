@@ -46,6 +46,13 @@ export default function Decks(props) {
           >
             {`Study ${decks.category}`}
           </Button>
+          <Button
+          color="warning"
+          size="sm"
+          >Edit</Button>
+          <Button
+          color="danger"
+          size="sm">Delete</Button>
         </Card>
       ))}
     </>
