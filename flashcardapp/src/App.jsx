@@ -1,9 +1,11 @@
 import "./App.css";
 import Acquisition from "./components/acquisition/Acquisition";
+import EditDeck from "./components/acquisition/EditDeck";
 import FlashcardsInDeck from "./components/flashcards/FlashcardsInDeck";
 import EditFlashcard from "./components/flashcards/EditFlashcard";
 // import DeleteFlashcard from "./components/flashcards/DeleteFlashcard";
 import AddFlashcard from "./components/flashcards/AddFlashcard";
+import AllFlashcards from "./components/flashcards/AllFlashcards";
 import Auth from "./components/auth/Auth";
 import { Routes, Route } from "react-router-dom";
 // import CreateDeck from "./components/acquisition/CreateDeck";
@@ -55,6 +57,14 @@ function App() {
         <Route
           path="/card/addcard"
           element={<AddFlashcard token={sessionToken} />}
+        />
+        <Route
+          path="/card/allcards"
+          element={<AllFlashcards token={sessionToken} />}
+        />
+        <Route
+          path="/deck/edit/:id"
+          element={<EditDeck token={sessionToken} />}
         />
         {/* <Route
           path="/card/delete/:id"

@@ -61,6 +61,19 @@ export default function AllFlashcards(props) {
   }, [props.token]);
   return (
     <>
+      <Row>
+        <Col md="2">
+          <Button
+            color="info"
+            outline
+            onClick={() => {
+              navigate("/decks");
+            }}
+          >
+            Back to Decks
+          </Button>
+        </Col>
+      </Row>
       <Container>
         <Card>
           {showFront ? fronts[cardIndex] : backs[cardIndex]}
