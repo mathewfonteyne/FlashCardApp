@@ -122,7 +122,7 @@ export default function Login({ updateToken }) {
               <FormGroup>
                 {/* {<Label for="exampleEmail">Email</Label>} */}
                 <TextField
-                  innerRef={emailRef}
+                  inputRef={emailRef}
                   label="Email Address"
                   margin="normal"
                   required
@@ -137,7 +137,7 @@ export default function Login({ updateToken }) {
               <FormGroup>
                 {/* <{Label for="examplePassword">Password</Label}> */}
                 <TextField
-                  innerRef={passwordRef}
+                  inputRef={passwordRef}
                   label="Password"
                   margin="normal"
                   required
