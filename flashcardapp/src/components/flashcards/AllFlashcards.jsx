@@ -61,9 +61,10 @@ export default function AllFlashcards(props) {
   }, [props.token]);
   return (
     <>
-      <Container>
+      <Container className="fcardcontain">
         <Card>
           {showFront ? fronts[cardIndex] : backs[cardIndex]}
+
           <Row>
             <Col>
               <Button onClick={prevCard}>back</Button>

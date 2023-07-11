@@ -1,0 +1,14 @@
+.flashcontent {
+  background-color: rgb(239, 167, 147);
+  border: 1px solid red;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: larger;
+  background-image: url("./index-cardwork.png");
+}
+.flashcardbtnrow {
+  margin-top: 50px;
+}

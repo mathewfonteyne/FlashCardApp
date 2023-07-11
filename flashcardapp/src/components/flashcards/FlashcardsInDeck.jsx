@@ -4,6 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Card, Button, Col, Row, Container } from "reactstrap";
 import EditFlashcard from "./EditFlashcard";
 import AddFlashcard from "./AddFlashcard";
+import "./FlashcardsInDeck.css";
+import indexCard from "./index-cardwork.png";
 
 export default function FlashcardsInDeck(props) {
   const { id } = useParams();
@@ -161,10 +163,12 @@ export default function FlashcardsInDeck(props) {
           //   backgroundColor: "light blue",
           // }}
         >
-          {showFront ? fronts[cardIndex] : backs[cardIndex]}
+          <div className="flashcontent">
+            {showFront ? fronts[cardIndex] : backs[cardIndex]}
+          </div>
 
           {/* {console.log(cardId)} */}
-          <Row>
+          <Row className="flashcardbtnrow">
             <Col>
               <Button onClick={prevCard}>back</Button>
             </Col>

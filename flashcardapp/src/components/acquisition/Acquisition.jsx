@@ -63,6 +63,7 @@ export default function Acquisition(props) {
   const slides = items.map((item) => {
     return (
       <CarouselItem
+        
         className="custom-tag"
         tag="div"
         key={item.id}
@@ -130,7 +131,7 @@ export default function Acquisition(props) {
           onClickHandler={next}
         />
       </Carousel> */}
-      <Container>
+      <Container style={}>
         <Row>{/* <DeckCreate /> */}</Row>
         <Row>
           {/* <Col md="10"> */}

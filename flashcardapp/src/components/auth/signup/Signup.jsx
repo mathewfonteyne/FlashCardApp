@@ -95,7 +95,7 @@ export default function Signup({ updateToken }) {
               <Grid item xs={12} sm={6}>
                 {/* <Label>First Name:</Label> */}
                 <TextField
-                  innerRef={firstNameRef}
+                  inputRef={firstNameRef}
                   name="firstName"
                   required
                   fullWidth
@@ -107,7 +107,7 @@ export default function Signup({ updateToken }) {
               <Grid item xs={12} sm={6}>
                 {/* <Label>Last Name:</Label> */}
                 <TextField
-                  innerRef={lastNameRef}
+                  inputRef={lastNameRef}
                   name="lastName"
                   required
                   fullWidth
@@ -118,7 +118,7 @@ export default function Signup({ updateToken }) {
               <Grid item xs={12}>
                 {/* <Label>Email:</Label> */}
                 <TextField
-                  innerRef={emailRef}
+                  inputRef={emailRef}
                   name="email"
                   required
                   fullWidth
@@ -130,7 +130,7 @@ export default function Signup({ updateToken }) {
               <Grid item xs={12}>
                 {/* {<Label>Password</Label>}  */}
                 <TextField
-                  innerRef={passwordRef}
+                  inputRef={passwordRef}
                   required
                   fullWidth
                   name="password"

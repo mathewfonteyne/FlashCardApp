@@ -55,9 +55,9 @@ export default function AddFlashcard(props) {
   };
 
   return (
-    <>
+    <div id="add-card" className="addNewCard">
       {console.log()}
-      <h1>Add Card</h1>
+      <h3>Add Card</h3>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label>Front</Label>
@@ -73,6 +73,6 @@ export default function AddFlashcard(props) {
           </Button>
         </Button>
       </Form>
-    </>
+    </div>
   );
 }

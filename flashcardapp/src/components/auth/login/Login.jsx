@@ -7,8 +7,17 @@ npm install @mui/material @emotion/react @emotion/styled
 */
 // This was done for M-ui
 import * as React from "react";
-import { Container, Grid, Paper, Box, Avatar, LockOutlinedIcon, Typography, TextField, Button } from "@mui/material";
-
+import {
+  Container,
+  Grid,
+  Paper,
+  Box,
+  Avatar,
+  LockOutlinedIcon,
+  Typography,
+  TextField,
+  Button,
+} from "@mui/material";
 
 export default function Login({ updateToken }) {
   // Refs
@@ -16,7 +25,6 @@ export default function Login({ updateToken }) {
   const passwordRef = useRef();
   const navigate = useNavigate();
 
-  
   async function handleSubmit(e) {
     e.preventDefault();
     let body = JSON.stringify({
@@ -48,9 +56,9 @@ export default function Login({ updateToken }) {
 
   // Standard import from Unit7, day50
   return (
-    <Container sx={{ bgcolor: "tomato", height: "100v" }} component="main">
+    <Container component="main">
       {/* {picture that loads on the side} */}
-      <Grid container spacing={2} sx={{ height: "80vh", mt: 3 }}>
+      <Grid container spacing={2} sx={{ height: "80vh", mt: 6 }}>
         <Grid
           item
           xs={false}
@@ -79,13 +87,11 @@ export default function Login({ updateToken }) {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-
-            </Avatar>
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
             <Typography component="h1" variant="h5">
               Login
             </Typography>
-            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1, mx: 3 }}>
               <FormGroup>
                 {/* {<Label for="exampleEmail">Email</Label>} */}
                 <TextField

@@ -8,12 +8,14 @@ import {
   Button,
   Table,
 } from "reactstrap";
+import "./Decks.css";
+import deckpicture from "./square.png";
 
 export default function Decks(props) {
   const navigate = useNavigate();
   return (
     <>
-      <h2>Decks</h2>
+      <h1 class="decksheading">Decks</h1>
       {/* <CardGroup>
         <Card>
           {props.decks.map((decks) => (
@@ -25,18 +27,17 @@ export default function Decks(props) {
 
       {props.decks.map((decks) => (
         <Card
+          className="dedecks"
           // scope="row"
           style={{
             width: "16rem",
             // height: "18rem",
             margin: "1rem",
+
             // textAlign: "center",
           }}
         >
-          <img
-            alt="Sample"
-            src="https://m.media-amazon.com/images/I/41BqtXRSiXL._AC_.jpg"
-          />
+          <img className="imagemove" alt="Sample" src={deckpicture} />
           {/* {decks.category} */}
           <Button
             onClick={() => navigate(`/decks/${decks._id}`)}
