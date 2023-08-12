@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 export default function AddFlashcard(props) {
-  //   const { id } = useParams();
+  // const { id } = useParams();
   const frontRef = useRef(); // map to deck name
   const backRef = useRef();
 
@@ -24,7 +24,7 @@ export default function AddFlashcard(props) {
     let bodyObj = JSON.stringify({
       front,
       back,
-      //   deck,
+      deck: props.id,
     });
     // Headers
     let myHeaders = new Headers();

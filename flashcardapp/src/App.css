@@ -1,3 +1,9 @@
 .App {
   text-align: center;
+  background-color: blueviolet;
+}
+
+.card {
+  height: 16rem;
+  background-color: blue;
 }

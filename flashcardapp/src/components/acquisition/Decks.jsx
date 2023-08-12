@@ -39,6 +39,7 @@ export default function Decks(props) {
           />
           {/* {decks.category} */}
           <Button
+            color="info"
             onClick={() => navigate(`/decks/${decks._id}`)}
             style={{
               margin: ".5rem",
