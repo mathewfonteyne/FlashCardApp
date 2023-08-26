@@ -1,9 +1,22 @@
 .App {
   text-align: center;
   background-color: rgb(101, 59, 141);
+  width: 100%;
 }
 
 .card {
   height: 16rem;
   background-color: blue;
+}
+
+/* .Orientation {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+} */
+
+.row {
+  justify-content: space-evenly;
+  /* This is causing the "Back to Decks" button to move from the left hand side of the screen, need to adjust that */
 }

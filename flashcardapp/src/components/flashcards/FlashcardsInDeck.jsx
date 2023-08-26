@@ -142,6 +142,7 @@ export default function FlashcardsInDeck(props) {
       <Row>
         <Col md="2">
           <Button
+            // float="left"
             color="info"
             outline
             onClick={() => {

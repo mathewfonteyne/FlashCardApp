@@ -25,12 +25,19 @@ export default function Decks(props) {
 
       {props.decks.map((decks) => (
         <Card
+          className="Orientation"
           // scope="row"
           style={{
             width: "16rem",
             // height: "18rem",
             margin: "1rem",
             // textAlign: "center",
+            // display: "flex",
+            // justifyContent: "space-evenly",
+            // display: "flex",
+            // flexDirection: "column",
+            justifyContent: "center",
+            textAlign: "center",
           }}
         >
           <img
